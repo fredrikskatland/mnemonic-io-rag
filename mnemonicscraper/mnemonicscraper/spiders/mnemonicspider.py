@@ -20,7 +20,7 @@ def extract_product_links(sitemap_url):
     solutions_links = []
     for url in root.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}url'):
         loc = url.find('{http://www.sitemaps.org/schemas/sitemap/0.9}loc').text
-        if 'www.mnemonic.io/solutions' in loc:
+        if 'www.mnemonic.io' in loc:
             solutions_links.append(loc)
 
     return solutions_links
@@ -38,10 +38,18 @@ class MnemonicSpider(scrapy.Spider):
     }
 
     def parse(self, response):
-       solution_description = response.css('div.xhtml p::text').getall()
-       solution_description_text = ''.join(solution_description).strip()
+       title = response.css('h1::text').get().strip()
+       ingress = response.css('p::text').get().strip()
+       content = response.css('div.xhtml p::text').getall()
+       content_text = ''.join(content).strip()
+
+       url_split = response.url.split('/')
 
        yield {
-            'solution_description': solution_description_text,
+            'title': title,
+            'ingress': ingress,
+            'content': content_text,
             'url': response.url,
+            'category': url_split[3],
+            'subcategory': url_split[4] if len(url_split) > 4 else ''
         }
