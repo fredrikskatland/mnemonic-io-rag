@@ -6,6 +6,7 @@ Chat with the contents of mnemonic.io
 - [x] Initial sitemap analysis
 - [x] Scrape contents
 - [x] Index in vectorstore
+- [x] Semantic analysis content 
 - [ ] Optimize retrieval strategy
 - [ ] Prompts
 - [ ] UI
