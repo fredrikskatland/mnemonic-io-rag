@@ -1,8 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from langserve import add_routes
-import sys
-#sys.path.append(r"C:\Users\fredr\AI\mnemonic-io-rag\mnemonic-rag\packages\retrieval-agent")
 from retrieval_agent.chain import agent_executor as retrieval_agent_chain
 
 app = FastAPI()
