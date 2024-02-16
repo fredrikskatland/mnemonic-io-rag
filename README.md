@@ -7,7 +7,7 @@ Chat with the contents of mnemonic.io
 - [x] Scrape contents
 - [x] Index in vectorstore
 - [x] Semantic analysis content 
-- [ ] Optimize retrieval strategy
-- [ ] Prompts
-- [ ] UI
+- [x] Optimize retrieval strategy
+- [x] Prompts
+- [x] UI (LangServe playground)
 - [ ] Deployment
