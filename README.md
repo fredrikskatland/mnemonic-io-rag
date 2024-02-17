@@ -1,6 +1,10 @@
 # mnemonic-io-rag
 Chat with the contents of mnemonic.io
 
+Try the app here: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/retrieval-agent/playground/
+
+API docs: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/docs
+
 ## TODOs
 
 - [x] Initial sitemap analysis
@@ -10,4 +14,4 @@ Chat with the contents of mnemonic.io
 - [x] Optimize retrieval strategy
 - [x] Prompts
 - [x] UI (LangServe playground)
-- [ ] Deployment
+- [x] Deployment
