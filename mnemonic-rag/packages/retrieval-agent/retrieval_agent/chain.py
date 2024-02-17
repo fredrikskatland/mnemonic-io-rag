@@ -20,7 +20,7 @@ from langchain.retrievers.multi_query import MultiQueryRetriever
 from langchain.schema import Document
 
 # load data from json (from scraper, moved to app)
-with open(r".\packages\retrieval-agent\data\output.json") as json_file:
+with open("./packages/retrieval-agent/data/output.json") as json_file:
     data = json.load(json_file)
 
 # Create documents suitable for retrieval

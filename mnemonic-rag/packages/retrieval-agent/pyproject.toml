@@ -11,6 +11,7 @@ langchain = "^0.1"
 openai = "<2"
 arxiv = "^2.0.0"
 langchain-openai = "^0.0.2.post1"
+chromadb = "0.4.22"
 
 [tool.poetry.group.dev.dependencies]
 langchain-cli = ">=0.0.21"
