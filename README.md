@@ -26,4 +26,4 @@ The content is currently static, and not regularly updated. Last scraped on feb.
 - [ ] Improve readme
 - [ ] Deeper exploratory analysis
 - [ ] Example prompts/question
-- [ ] LangSmith setup and logging
+- [x] LangSmith setup and logging
