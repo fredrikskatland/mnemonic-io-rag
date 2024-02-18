@@ -1,5 +1,14 @@
 # mnemonic-rag
 
+What with the contents of mnemonic.io with an retrieval agent. Embedding and indexing the output of the web scraper.
+Served with langServed, hosted on heroku.
+
+Try the app here: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/retrieval-agent/playground/
+
+API docs: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/docs
+
+The content is currently static, and not regularly updated. Last scraped on feb. 16 2024.
+
 ## Installation
 
 Install the LangChain CLI if you haven't yet

@@ -11,6 +11,7 @@ Try the app here: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/re
 
 API docs: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/docs
 
+The content is currently static, and not regularly updated. Last scraped on feb. 16 2024.
 
 ## TODOs
 
@@ -25,4 +26,4 @@ API docs: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/docs
 - [ ] Improve readme
 - [ ] Deeper exploratory analysis
 - [ ] Example prompts/question
-- [ ] LangSmith setup and loggin
+- [ ] LangSmith setup and logging
