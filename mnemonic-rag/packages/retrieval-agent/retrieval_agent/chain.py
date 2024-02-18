@@ -56,13 +56,16 @@ description = (
     "A retriever for content on mnemonic.io. mnemonic is a cybersecurity company which publish content related to their field."
     "Useful for when you need to answer questions mnemonic, cyber security, or related topics."
     "Input should be a search query."
+    "If it isn't clearly stated you can assume that the question is about mnemonic content."
+    "If the answer is not satisfactory, you can ask for more information."
+    "Do not provide answers that are not grounded in the search tool results."
 )
 
 # Create the tool
 mnemonic_tool = create_retriever_tool(mnemonicRetriever, "mnemonic_search", description)
 tools = [mnemonic_tool]
-assistant_system_message = """You are a helpful research assistant. \
-Lookup relevant information as needed."""
+assistant_system_message = """You are the helpful mnemonic web page navigator assistant. \
+Lookup relevant information as needed with you tools."""
 prompt = ChatPromptTemplate.from_messages(
     [
         ("system", assistant_system_message),
