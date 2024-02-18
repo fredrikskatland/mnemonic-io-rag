@@ -19,7 +19,7 @@ The content is currently static, and not regularly updated. Last scraped on feb.
 - [x] Scrape contents
 - [x] Index in vectorstore
 - [x] Semantic analysis content 
-- [x] Optimize retrieval strategy
+- [ ] Optimize retrieval strategy
 - [x] Prompts
 - [x] UI (LangServe playground)
 - [x] Deployment
