@@ -42,8 +42,8 @@ for i in data:
 # Prepare for embedding and indexing
 docs = [Document(page_content=content, metadata=metadata) for content, metadata in zip(page_content, metadatas)]
 
-embedding_function = OpenAIEmbeddings()
-llm = ChatOpenAI()
+embedding_function = OpenAIEmbeddings(model="text-embedding-3-small")
+llm = ChatOpenAI(model="gpt-4-0125-preview")
 
 
 mnemonic_db = Chroma.from_documents(docs, embedding_function)
