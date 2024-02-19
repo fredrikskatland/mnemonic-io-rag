@@ -11,7 +11,7 @@ Try the app here: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/re
 
 API docs: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/docs
 
-The content is currently static, and not regularly updated. Last scraped on feb. 16 2024.
+Takes 20-30 seconds to start if it is sleeping. The content is currently static, and not regularly updated. Last scraped on feb. 16 2024.
 
 ## TODOs
 
