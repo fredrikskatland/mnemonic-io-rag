@@ -27,3 +27,6 @@ Takes 20-30 seconds to start if it is sleeping. The content is currently static,
 - [ ] Deeper exploratory analysis
 - [ ] Example prompts/question
 - [x] LangSmith setup and logging
+- [ ] Scraper pipeline to Qdrant
+- [ ] Move scraper to AWS Lambda
+- [ ] Schedule/trigger scraper with AWS EventBridge 
