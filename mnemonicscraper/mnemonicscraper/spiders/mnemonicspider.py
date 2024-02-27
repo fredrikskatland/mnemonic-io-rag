@@ -3,6 +3,8 @@ import scrapy
 from scrapy.http import Request
 import requests
 import xml.etree.ElementTree as ET
+from mnemonicscraper.items import MnemonicscraperItem
+from scrapy.loader import ItemLoader
 
 def extract_product_links(sitemap_url):
     # Send a GET request to the sitemap URL
@@ -38,18 +40,17 @@ class MnemonicSpider(scrapy.Spider):
     }
 
     def parse(self, response):
-       title = response.css('h1::text').get().strip()
-       ingress = response.css('p::text').get().strip()
-       content = response.css('div.xhtml p::text').getall()
-       content_text = ''.join(content).strip()
+        
+        url_split = response.url.split('/')
+        
+        item = MnemonicscraperItem()
 
-       url_split = response.url.split('/')
-
-       yield {
-            'title': title,
-            'ingress': ingress,
-            'content': content_text,
-            'url': response.url,
-            'category': url_split[3],
-            'subcategory': url_split[4] if len(url_split) > 4 else ''
-        }
+        l = ItemLoader(item=MnemonicscraperItem(), selector=response)
+        l.add_css("title", 'h1')
+        l.add_css("ingress", 'p')
+        l.add_css("content", 'div.xhtml p')
+        l.add_value("url", response.url)
+        l.add_value("category", url_split[3])
+        l.add_value("subcategory", url_split[4] if len(url_split) > 4 else '')
+        
+        yield l.load_item()
