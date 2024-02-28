@@ -70,9 +70,9 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "mnemonicscraper.pipelines.MnemonicscraperPipeline": 300,
-#}
+ITEM_PIPELINES = {
+    "mnemonicscraper.pipelines.MnemonicscraperPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
