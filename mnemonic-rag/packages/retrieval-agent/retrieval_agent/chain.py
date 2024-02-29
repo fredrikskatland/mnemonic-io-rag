@@ -14,10 +14,12 @@ from langchain_core.pydantic_v1 import BaseModel, Field
 
 
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import Qdrant
 from langchain.retrievers.multi_query import MultiQueryRetriever
 
 from langchain.schema import Document
+
+from qdrant_client import QdrantClient
 
 # load data from json (from scraper, moved to app)
 with open("./packages/retrieval-agent/data/output.json") as json_file:
@@ -45,11 +47,26 @@ docs = [Document(page_content=content, metadata=metadata) for content, metadata 
 embedding_function = OpenAIEmbeddings(model="text-embedding-3-small")
 llm = ChatOpenAI(model="gpt-4-0125-preview")
 
+url = "https://63c46998-a66f-476a-92b0-39675fe642cc.us-east4-0.gcp.cloud.qdrant.io:6333"
+api_key = os.environ['QDRANT_MNEMONIC']
 
-mnemonic_db = Chroma.from_documents(docs, embedding_function)
+client = QdrantClient(
+    url=url,
+    api_key= api_key,
+)
+
+collection_name = "mnemonic-io"
+
+vectorstore = Qdrant(
+    client=client,
+    collection_name=collection_name,
+    embeddings=embedding_function,
+)
+
+#mnemonic_db = Chroma.from_documents(docs, embedding_function)
 
 mnemonicRetriever = MultiQueryRetriever.from_llm(
-    retriever=mnemonic_db.as_retriever(), llm=llm
+    retriever=vectorstore.as_retriever(), llm=llm
 )
 
 description = (

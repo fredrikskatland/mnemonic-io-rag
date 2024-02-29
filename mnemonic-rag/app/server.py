@@ -1,6 +1,12 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from langserve import add_routes
+import sys
+import os
+
+pwd = os.getcwd()
+sys.path.append(pwd+"\\packages\\retrieval-agent")
+
 from retrieval_agent.chain import agent_executor as retrieval_agent_chain
 
 app = FastAPI()
