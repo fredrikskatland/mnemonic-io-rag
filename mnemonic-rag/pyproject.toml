@@ -18,6 +18,7 @@ retrieval-agent = {path = "packages/retrieval-agent", develop = true}
 
 [tool.poetry.group.dev.dependencies]
 langchain-cli = ">=0.0.15"
+qdrant-client = "==1.7.3"
 
 [build-system]
 requires = ["poetry-core"]
