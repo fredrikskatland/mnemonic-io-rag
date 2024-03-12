@@ -93,7 +93,7 @@ def extract_product_links(sitemap_url):
 
 sitemap_url = 'https://www.mnemonic.io/sitemap.xml'
 #solutions_links = extract_product_links(sitemap_url)
-solution_links = compare_sitemaps(sitemap_url, storage_file="../../previous_sitemap.xml", retries=0, max_retries=3)
+solution_links = compare_sitemaps(sitemap_url, storage_file="../previous_sitemap.xml", retries=0, max_retries=3)
 unique_product_links = list(set(solution_links))
 
 class MnemonicSpider(scrapy.Spider):
