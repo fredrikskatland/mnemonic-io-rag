@@ -36,10 +36,14 @@ def compare_sitemaps(sitemap_url, storage_file="previous_sitemap.xml", retries=0
                 file.write("This is a new file.")
             # Call the function again to check if the file now exists
             compare_sitemaps(sitemap_url, storage_file, retries=retries+1, max_retries=max_retries)
+            with open(storage_file, "r") as f:
+                previous_soup = BeautifulSoup(f.read(), 'xml')
     except Exception as e:
         print(f"An error occurred: {e}")
         # Optionally, you can attempt to retry here as well
         compare_sitemaps(sitemap_url, storage_file, retries=retries+1, max_retries=max_retries)
+        with open(storage_file, "r") as f:
+            previous_soup = BeautifulSoup(f.read(), 'xml')
 
 
     # Compare for changes
