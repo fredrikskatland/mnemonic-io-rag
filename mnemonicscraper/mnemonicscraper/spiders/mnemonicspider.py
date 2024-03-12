@@ -26,7 +26,7 @@ def compare_sitemaps(sitemap_url, storage_file="previous_sitemap.xml", retries=0
     try:
         # Check if file exists
         if os.path.exists(storage_file):
-            print(f"File exists: {storage_file}")
+            #print(f"File exists: {storage_file}")
             with open(storage_file, "r") as f:
                 previous_soup = BeautifulSoup(f.read(), 'xml')
         else:
@@ -71,7 +71,7 @@ def compare_sitemaps(sitemap_url, storage_file="previous_sitemap.xml", retries=0
     with open(storage_file, "w") as f:
         f.write(response.content.decode())  
 
-    print("Changed URLs: ", changed_urls)
+    #print("Changed URLs: ", changed_urls)
     return changed_urls 
 
 def extract_product_links(sitemap_url):
