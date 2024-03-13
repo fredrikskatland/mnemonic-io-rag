@@ -11,7 +11,7 @@ Try the app here: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/re
 
 API docs: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/docs
 
-Takes 20-30 seconds to start if it is sleeping. The content is currently static, and not regularly updated. Last scraped on feb. 16 2024.
+Takes 20-30 seconds to start if it is sleeping. The sitemap is checked every hour (at 41 minutes) and any changes will trigger a scrape and indexing of the new content.
 
 ## TODOs
 
@@ -29,4 +29,7 @@ Takes 20-30 seconds to start if it is sleeping. The content is currently static,
 - [x] LangSmith setup and logging
 - [x] Scraper pipeline to Qdrant
 - [ ] Move scraper to AWS Lambda (skipped, going for EC2)
-- [ ] Schedule/trigger scraper with AWS EventBridge 
+- [ ] Schedule/trigger scraper with AWS EventBridge (skipped, going for cronjob)
+- [x] Only scrape when sitemap has changed
+- [x] Move scraper to EC2
+- [x] Schedule/trigger scraper with cronjob (at 41 minutes, every hour)
