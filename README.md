@@ -7,9 +7,15 @@ Chat with the contents of mnemonic.io
 * quick semantic analysis of content, 
 * LangChain Retrieval-Agent deployed with LangServe with Docker on heroku
 
-Try the app here: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/retrieval-agent/playground/
+Try the app here: 
+Retrival agent (Agent does the work. More thourogh, but slower):
+* https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/retrieval-agent/playground/
 
-API docs: https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/docs
+Self query chain (Chain with meetadata filers in query. Faster, but needs good and precise prompts):
+* https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/self-query-qdrant/playground/
+
+Docs:
+https://mnemonic-retrieval-agent-6c56586efc83.herokuapp.com/self-query-qdrant/playground/
 
 Takes 20-30 seconds to start if it is sleeping. The sitemap is checked every hour (at 41 minutes) and any changes will trigger a scrape and indexing of the new content.
 
@@ -33,3 +39,6 @@ Takes 20-30 seconds to start if it is sleeping. The sitemap is checked every hou
 - [x] Only scrape when sitemap has changed
 - [x] Move scraper to EC2
 - [x] Schedule/trigger scraper with cronjob (at 41 minutes, every hour)
+- [x] Self query chain
+- [ ] Query analysis chain
+- [ ] RAG Strategy evaluation

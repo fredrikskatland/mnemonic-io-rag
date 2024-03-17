@@ -9,11 +9,12 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.12,<3.13"
 uvicorn = "^0.23.2"
 langserve = {extras = ["server"], version = ">=0.0.30"}
 pydantic = "<2"
 retrieval-agent = {path = "packages/retrieval-agent", develop = true}
+self-query-qdrant = {path = "packages/self-query-qdrant", develop = true}
 
 
 [tool.poetry.group.dev.dependencies]

@@ -8,6 +8,7 @@ pwd = os.getcwd()
 sys.path.append(pwd+"\\packages\\retrieval-agent")
 
 from retrieval_agent.chain import agent_executor as retrieval_agent_chain
+from self_query_qdrant import chain as self_query_qdrant_chain
 
 app = FastAPI()
 
@@ -19,6 +20,7 @@ async def redirect_root_to_docs():
 
 # Edit this to add the chain you want to add
 add_routes(app, retrieval_agent_chain, path="/retrieval-agent")
+add_routes(app, self_query_qdrant_chain, path="/self-query-qdrant")
 
 if __name__ == "__main__":
     import uvicorn
